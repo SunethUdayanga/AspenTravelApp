@@ -1,5 +1,6 @@
 import React, { ReactNode, useRef } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, Animated, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Animated, TouchableWithoutFeedback } from 'react-native';
+import { HomeLocationStyles } from '../../styles/HomeLocation.style';
 import ICONS from '../../assets/icons';
 
 type CardlgProps = {
@@ -7,7 +8,6 @@ type CardlgProps = {
   imagePath: any;
   placeName: string;
   rating?: string;
-
 };
 
 const Cardlg: React.FC<CardlgProps> = ({ imagePath, placeName, rating } : CardlgProps ) => {
@@ -29,20 +29,20 @@ const Cardlg: React.FC<CardlgProps> = ({ imagePath, placeName, rating } : Cardlg
 
   return (
     <TouchableWithoutFeedback onPressIn={handlePressIn} onPressOut={handlePressOut}>
-    <Animated.View style={[styles.card, { transform: [{ scale }] }]}>
-      <Image source={imagePath} resizeMode='cover' style={{ width: '160%', height: '160%', position: 'absolute', top: -80, left: -100 }} />
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-        <View style={{ height: 53, width: 90, left: 12, bottom: 12, gap: 4 }}>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', width: 90, height: 23, backgroundColor: '#4D5652', borderRadius: 59, padding:4 }}>
-            <Text style={{ fontSize: 12, color: '#FFFFFF' }}>{placeName}</Text>
+    <Animated.View style={[HomeLocationStyles.CardlgMain, { transform: [{ scale }] }]}>
+      <Image source={imagePath} resizeMode='cover' style={HomeLocationStyles.CardlgPopularImage} />
+      <View style={HomeLocationStyles.CardlgPopularItems}>
+        <View style={HomeLocationStyles.CardlgPopularItemsContainer}>
+          <View style={HomeLocationStyles.CardlgPopularItemsNameWrap}>
+            <Text style={HomeLocationStyles.CardlgPopularItemsText}>{placeName}</Text>
           </View>
 
-          <View style={{ flex: 1, flexDirection:'row', alignItems: 'center', width:52, height:23, backgroundColor: '#4D5652', borderRadius: 59, padding:4 }}>
+          <View style={HomeLocationStyles.CardlgPopularItemsRateWrap}>
             <Image source={ICONS.STAR} />
-            <Text style={{ fontSize: 12, color: '#FFFFFF' }}>{rating}</Text>
+            <Text style={HomeLocationStyles.CardlgPopularItemsText}>{rating}</Text>
           </View>
         </View>
-        <View style={{ alignItems: 'flex-end', justifyContent: 'flex-end', right: 12, bottom: 12 }}>
+        <View style={HomeLocationStyles.CardlgPopularItemsFavoriteWrap}>
           <TouchableOpacity>
             <Image source={ICONS.HEART} />
           </TouchableOpacity>
@@ -55,15 +55,3 @@ const Cardlg: React.FC<CardlgProps> = ({ imagePath, placeName, rating } : Cardlg
 
 export default Cardlg;
 
-const styles = StyleSheet.create({
-  card: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    borderRadius: 24,
-    width: 188,
-    height: 240,
-    backgroundColor: '#fff',
-    overflow: 'hidden',
-
-  },
-});

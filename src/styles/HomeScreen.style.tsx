@@ -1,20 +1,17 @@
 import { StyleSheet } from "react-native";
 import { FONTS } from "../assets/fonts";
 
-export const Styles = StyleSheet.create({
+export const HomeStyles = StyleSheet.create({
     header: {
         margin:20,
         flexDirection:"row",
         justifyContent:"space-between",
         height:56,
-
     },
     hearderLeft: {},
     headerRight: {
         top:0,
         flexDirection:"row",
-       
-    
     },
     headerDropdown: {
         flexDirection:"row",
@@ -41,7 +38,6 @@ export const Styles = StyleSheet.create({
         height:52,
         paddingHorizontal:16  
     },
-   
     mTabBar: {
         marginHorizontal:20,
         backgroundColor:'transparent',
@@ -82,9 +78,7 @@ export const Styles = StyleSheet.create({
         color:'blue',
         marginTop:32,
     },
-    inTabLocationCardPopular:{
-
-    },
+    inTabLocationCardPopular:{},
     inTabLocationButtom:{},
     inTabLocationCardRecommended:{}
     

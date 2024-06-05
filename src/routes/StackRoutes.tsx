@@ -1,11 +1,6 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from '../../screen/HomeScreen';
-import BookingScreen from '../../screen/BookingScreen';
-import FavoriteScreen from '../../screen/FavoriteScreen';
-import ProfileScreen from '../../screen/ProfileScreen';
-import ButtomNavBar from './ButtomNavBar';
+import ButtomNavBar from '../components/Navigation/ButtomNavBar';
 
 const SCREENS = {
     HOME: 'HOME',
@@ -23,10 +18,10 @@ const StackRoutes = () => {
                 name={SCREENS.HOME}
                 component={ButtomNavBar}
                 options={{ headerShown: false }}
-            /> 
+            />
         </Stack.Navigator>
     )
 }
 
-export default StackRoutes
+export default StackRoutes;
 

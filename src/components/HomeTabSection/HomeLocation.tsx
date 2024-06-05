@@ -1,9 +1,10 @@
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { Styles } from '../../styles/HomeScreen.style';
+import React from 'react';
 import Cardlg from './Cardlg';
 import Cardsm from './Cardsm';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { HomeStyles } from '../../styles/HomeScreen.style';
 
+// Sample Lists for add locations
 const PopularPlaces = [
   {
     placeName: 'Alley Palace',
@@ -28,22 +29,19 @@ const RecommendedPlaces =[
     imageUrl:require('../../assets/images/3098b354225e9c001d990dc6c08315e8.jpg'),
     travelPackage:'2N/3D'
   }
-]
-
-
-
+];
 
 const HomeLocation = () => {
   return (
     <ScrollView style={{ marginHorizontal: 20 }} showsVerticalScrollIndicator={false} scrollEnabled>
-      <View style={Styles.inTabLocationHead}>
-        <Text style={Styles.inTabLocationHeadText}>Popular</Text>
+      <View style={HomeStyles.inTabLocationHead}>
+        <Text style={HomeStyles.inTabLocationHeadText}>Popular</Text>
         <TouchableOpacity>
-          <Text style={Styles.inTabLocationHeadBtn}>See all</Text>
+          <Text style={HomeStyles.inTabLocationHeadBtn}>See all</Text>
         </TouchableOpacity>
       </View>
       <View>
-        <ScrollView style={Styles.inTabLocationCardPopular} showsHorizontalScrollIndicator={false} contentContainerStyle={{
+        <ScrollView style={HomeStyles.inTabLocationCardPopular} showsHorizontalScrollIndicator={false} contentContainerStyle={{
           columnGap: 16
         }} horizontal>
           {PopularPlaces.map((place, index) =>(
@@ -51,9 +49,9 @@ const HomeLocation = () => {
           ))}
           </ScrollView>
       </View>
-      <Text style={Styles.inTabLocationHeadText}>Recommended</Text>
+      <Text style={HomeStyles.inTabLocationHeadText}>Recommended</Text>
       <View>
-        <ScrollView style={Styles.inTabLocationCardPopular} showsHorizontalScrollIndicator={false} contentContainerStyle={{
+        <ScrollView style={HomeStyles.inTabLocationCardPopular} showsHorizontalScrollIndicator={false} contentContainerStyle={{
           columnGap: 16
         }} horizontal>
           {RecommendedPlaces.map((place, index) => (

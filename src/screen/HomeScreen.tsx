@@ -1,34 +1,30 @@
-import { View, Text, Image, TouchableOpacity, TextInput, Dimensions } from 'react-native'
-import React, { useState } from 'react'
-import { Styles } from '../styles/HomeScreen.style'
+import { View, Text, Image, TouchableOpacity, TextInput } from 'react-native'
+import React from 'react'
+import { HomeStyles } from '../styles/HomeScreen.style'
 import TabSection from '../components/Navigation/TabSection';
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
+import ICONS from '../assets/icons';
 
 const HomeScreen = () => {
     return (
-        <View style={{ flex: 1, top: 24, }}>
-            <View id='header' style={Styles.header}>
-                <View style={Styles.hearderLeft}>
-                    <Text style={Styles.headerTextsm}>Explore</Text>
-                    <Text style={Styles.headerTextlg}>Aspen</Text>
+        <View style={{ flex: 1, top: 24 }}>
+            <View id='header' style={HomeStyles.header}>
+                <View style={HomeStyles.hearderLeft}>
+                    <Text style={HomeStyles.headerTextsm}>Explore</Text>
+                    <Text style={HomeStyles.headerTextlg}>Aspen</Text>
                 </View>
-                <View style={Styles.headerRight}>
-                    <TouchableOpacity style={Styles.headerDropdown}>
-                        <Image style={{ width: 16, height: 16, marginRight: 4 }} source={require('../assets/icons/location-1.png')} />
-                        <Text style={{ fontWeight:400, fontSize:12 }}>Aspen, USA</Text>
-                        <Image style={{ width: 16, height: 16, marginLeft: 6 }} source={require('../assets/icons/ArrowDown.png')} />
+                <View style={HomeStyles.headerRight}>
+                    <TouchableOpacity style={HomeStyles.headerDropdown}>
+                        <Image style={{ width: 16, height: 16, marginRight: 4 }} source={ICONS.LOCATION} />
+                        <Text style={{ fontWeight: 400, fontSize: 12 }}>Aspen, USA</Text>
+                        <Image style={{ width: 16, height: 16, marginLeft: 6 }} source={ICONS.ARROW} />
                     </TouchableOpacity>
                 </View>
             </View>
-            <View id='search' style={Styles.searchBox}>
-                <Image style={{ width: 20, height: 20 }} source={require('../assets/icons/Search.png')} />
+            <View id='search' style={HomeStyles.searchBox}>
+                <Image style={{ width: 20, height: 20 }} source={ICONS.SEARCH} />
                 <TextInput placeholder='Find things to do' />
-
             </View>
-            <View id='Tab' style={{height:'70%',}}>
+            <View id='Tab' style={{ height: '74%' }}>
                 <TabSection />
             </View>
         </View>
