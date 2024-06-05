@@ -1,4 +1,7 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Screenshot
+![markup_1000019689](https://github.com/SunethUdayanga/AspenTravelApp/assets/71070307/d3009a09-42a9-4602-a397-9aa81c52e505)
+
 
 # Getting Started
 
